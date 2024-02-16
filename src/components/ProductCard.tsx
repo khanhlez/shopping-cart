@@ -44,7 +44,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           {handleRating(product.rating.rate)}
         </div>
         <p className='mb-4'>
-          <span className='text-3xl font-bold text-slate-900'>${product.price}</span>
+          <span className='text-3xl font-bold text-slate-900'>${product.originalPrice || product.price}</span>
         </p>
         <button
           className='w-full flex justify-center items-center rounded-md bg-blue-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300'
