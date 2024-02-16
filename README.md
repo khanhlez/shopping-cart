@@ -1,6 +1,6 @@
 # Shopping cart
 
-A mini project to learn ReactJS, a part of (The Odin Project)[https://www.theodinproject.com] course
+A mini project to learn ReactJS, a part of [The Odin Project](https://www.theodinproject.com) course
 
 ![preview](./public/preview.png)
 
