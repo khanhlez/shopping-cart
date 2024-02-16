@@ -10,7 +10,6 @@ const Products = () => {
       const response = await fetch('https://fakestoreapi.com/products')
       const data = await response.json()
       setProducts(data)
-      console.log('products', data)
     } catch (error) {
       console.log('error', error)
     }

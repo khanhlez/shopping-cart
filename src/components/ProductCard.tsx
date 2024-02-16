@@ -1,11 +1,9 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCart } from '~/compositions/useCart'
 import { Product } from '~/interfaces'
-import { useCartStore } from '~/stores/cart'
 
 const ProductCard = ({ product }: { product: Product }) => {
-  const { addToCart } = useCartStore()
-  const [loading, setLoading] = useState(false)
+  const { loading, handleAddToCart } = useCart()
   const handleRating = (rate: number) => {
     const stars = []
     for (let i = 0; i < 5; i++) {
@@ -27,22 +25,11 @@ const ProductCard = ({ product }: { product: Product }) => {
     return stars
   }
 
-  const handleAddToCart = (product: Product) => {
-    addToCart(product)
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }
-
   return (
-    <div className='relative w-full my-10 overflow-hidden rounded-lg bg-white shadow-md'>
-      <Link to={`/product/${product.id}`} className='block flex justify-center'>
+    <div className='relative w-full my-10 pt-8 overflow-hidden rounded-lg bg-white shadow-md'>
+      <Link to={`/product/${product.id}`} className='flex justify-center'>
         <img className='h-60 rounded-t-lg object-cover' src={product.image} alt='product image' />
       </Link>
-      <span className='absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white'>
-        Sale
-      </span>
       <div className='mt-4 px-5 pb-5'>
         <Link to={`/product/${product.id}`}>
           <h5

@@ -9,7 +9,7 @@ const Header = () => {
         <div className='relative flex items-center justify-center -mx-4 sm:justify-between'>
           <div className='max-w-full px-4 w-60 lg:w-48'>
             <Link to='/' className='block w-full py-5 lg:py-3'>
-              <span>The Odin Shop</span>
+              <span className='text-xl font-bold'>The Odin Shop</span>
             </Link>
           </div>
           <div className='flex items-center justify-end w-full px-4 lg:justify-between'>
@@ -42,7 +42,10 @@ const Header = () => {
             </div>
             <div className='relative z-20'>
               <div className='flex max-w-[200px] justify-end'>
-                <button className='relative flex h-[42px] w-[42px] items-center justify-center rounded-full border-[.5px] border-stroke dark:border-dark-3 bg-gray-2 dark:bg-dark-2 text-dark dark:text-white'>
+                <Link
+                  to='/cart'
+                  className='relative flex h-[42px] w-[42px] items-center justify-center rounded-full border-[.5px] border-stroke dark:border-dark-3 bg-white dark:bg-dark-2 text-dark dark:text-white'
+                >
                   <svg
                     width='22'
                     height='22'
@@ -56,10 +59,10 @@ const Header = () => {
                     <path d='M14.5062 13.3375C14.0937 13.3375 13.7156 13.6812 13.7156 14.1281V16.7062C13.7156 17.1187 14.0594 17.4969 14.5062 17.4969C14.9531 17.4969 15.2969 17.1531 15.2969 16.7062V14.0937C15.2625 13.6812 14.9187 13.3375 14.5062 13.3375Z'></path>
                   </svg>
 
-                  <span className='absolute -top-1 -right-1 h-[18px] w-[18px] rounded-full bg-blue-600 leading-[18px] text-[10px] font-semibold text-white'>
+                  <span className='absolute -top-1 -right-2 h-[18px] w-[18px] rounded-full bg-blue-600 leading-[18px] text-[11px] text-center font-semibold text-white'>
                     {getItemCount()}
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
